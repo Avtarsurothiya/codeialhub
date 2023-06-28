@@ -7,8 +7,12 @@ const expresslayouts = require('express-ejs-layouts');
 
 //need to use before the routes because routes will use this library
 app.use(expresslayouts);
+
 //Using express router for all routes
 app.use('/', require('./routes'));
+
+//Informing Index where to look for static files
+app.use(express.static('./assets'));
 
 //Setting up the view engine
 app.set('view engine', 'ejs');
