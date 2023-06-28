@@ -5,6 +5,10 @@ const port = 8000;
 //Using express router for all routes
 app.use('/', require('./routes'));
 
+//Setting up the view engine
+app.set('view engine', 'ejs');
+app.set('view', './views');
+
 app.listen(port, function(err){
     if(err){
         // using interpolation via ` ${ } ` to embed variable with comment
