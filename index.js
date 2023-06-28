@@ -5,7 +5,10 @@ const port = 8000;
 //To use layout in views
 const expresslayouts = require('express-ejs-layouts');
 
-//need to use before the routes because routes will use this library
+//To use Database connection
+const db = require('./config/mongoose');
+
+//We need to use expresslayouts before the routes as routes will use this library
 app.use(expresslayouts);
 
 //Using express router for all routes
