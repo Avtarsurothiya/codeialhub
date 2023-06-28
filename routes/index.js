@@ -16,5 +16,13 @@ router.get( '/', homecontroller.home)
 //to access chain route
 router.get('/chain', homecontroller.chain);
 
+//when other then / request will come from other controller "users" this will route it to the rquired location
+router.use('/users', require('./users'));
+router.use('/posts', require('./posts'));
+
+
+// for anty further routes, access from here
+// router.use('/routerName', require('./routerfile));
+
 // Exporting router to be available for indexe.js app entry point
 module.exports = router;
