@@ -1,5 +1,11 @@
 module.exports.home = function(req, res){
-    return res.end('<h1>Express is up for Codial!</h1>');
+    
+    /* To send direct response to webapp and end it 
+    return res.end('<h1>Express is up for Codial!</h1>'); */
+    
+    return res.render('home', {
+        title: "Home"
+    });
 }
 
 //creating a route
