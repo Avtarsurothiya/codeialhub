@@ -14,6 +14,10 @@ app.use('/', require('./routes'));
 //Informing Index where to look for static files
 app.use(express.static('./assets'));
 
+//extract style and script tags from partial pages and put at its  proper places in layout
+app.set('layout extractStyles', true);
+app.set('layout extractScripts', true); 
+
 //Setting up the view engine
 app.set('view engine', 'ejs');
 app.set('views', './views');
