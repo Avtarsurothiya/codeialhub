@@ -6,4 +6,8 @@ const users_controller = require('../controllers/users_controller');
 router.get('/profile', users_controller.profile);
 router.get('/profilemain', users_controller.profilemain);
 
+//Adding Authentication Pages routes 
+router.get('/sign-up', users_controller.signup);
+router.get('/sign-in', users_controller.signin);
+
 module.exports = router;
