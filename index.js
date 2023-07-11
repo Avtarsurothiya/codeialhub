@@ -1,4 +1,5 @@
 const express = require('express');
+const cookieParser = require('cookie-parser');
 const app = express();
 const port = 8000;
 
@@ -8,6 +9,8 @@ const expresslayouts = require('express-ejs-layouts');
 //To use Database connection
 const db = require('./config/mongoose');
 
+app.use(express.urlencoded({extended: true}));
+app.use(cookieParser({extended: true}));
 //We need to use expresslayouts before the routes as routes will use this library
 app.use(expresslayouts);
 
